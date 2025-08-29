@@ -8,10 +8,8 @@ read -p "آیا ساب‌دامنه دارید؟ (اگر ندارید Enter را
 read -p "نام کاربری دیتابیس MySQL را وارد کنید: " DB_USER
 read -p "رمز عبور دیتابیس MySQL را وارد کنید: " DB_PASS
 
-# دانلود اسکریپت‌ها از گیت‌هاب و تنظیم
-echo "گرفتن فایل‌ها از گیت‌هاب..."
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+sudo apt update
+sudo apt install git -y
 
 # اجرای اسکریپت‌های نصب و تنظیم
 bash apache-setup/install_apache.sh "$DOMAIN" "$SUBDOMAIN"
@@ -22,3 +20,4 @@ bash ssl-setup/install_ssl.sh "$DOMAIN" "$SUBDOMAIN"
 bash lscache-setup/install_lscache.sh "$DOMAIN"
 
 echo "همه مراحل با موفقیت انجام شد!"
+
